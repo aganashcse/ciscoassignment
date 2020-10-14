@@ -128,8 +128,8 @@ def update_router():
 def create_router():
     input_json = request.get_json()
     try:
-        router = Router(loopback=input_json.get("LoopbackIP"), hostname=input_json.get(
-            "HostName"), routertype=input_json.get("type"))
+        router = Router(sapid=input_json.get('SapId'), loopback=input_json.get("LoopbackIP"), hostname=input_json.get(
+            "HostName"), routertype=input_json.get("type"), macaddress=input_json.get("MacAddress"))
         router.insert_to_db()
         res = {"success": True,
                "message": "New router details successfully created!"}

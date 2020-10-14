@@ -12,6 +12,9 @@ parameters:
     schema:
       type: "object"
       properties:
+        SapId:
+          type: "integer"
+          example: 2
         LoopbackIP:
           type: "string"
           example: "10.10.10.10"
@@ -21,6 +24,9 @@ parameters:
         type:
           type: "string"
           example: "AG1/CSS"
+        MacAddress:
+          type: "string"
+          example: "as:df:fg:01:8d"
 responses:
   405:
     description: "Invalid input"
