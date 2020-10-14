@@ -1,0 +1,16 @@
+summary: "Update router details"
+description: "This API will update a router details"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - in: "query"
+    name: "LoopbackIP"
+    description: "Accepts a input of router details with old ip"
+    required: true
+    schema:
+      type: "string"
+responses:
+  405:
+    description: "Invalid input"

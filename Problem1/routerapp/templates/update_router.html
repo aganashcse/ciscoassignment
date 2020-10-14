@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-4" style="margin-top: -60px;">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Enter Router details to update:</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="POST" action="/update" id="update_router">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-sm-4"><label>
+                                        Sap Id
+                                    </label></div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" id="sapid" placeholder="Enter sapid" name="sapid" type="text" autocomplete="off" value= "{{router_dict['sapid']}}" disabled/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-4"><label>
+                                        Loopback
+                                    </label></div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" id="Loopback" placeholder="Enter Loopback" name="Loopback" type="text" autocomplete="off"  value= "{{router_dict['loopback']}}"/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-4"><label>
+                                        hostname
+                                    </label></div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" id = "hostname" placeholder="Enter hostname" name="hostname" type="text" autocomplete="off" value="{{router_dict['hostname']}}"/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-4"><label>
+                                        routertype
+                                    </label></div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" id = "routertype" placeholder="Enter routertype" name="routertype" type="text" autocomplete="off" value="{{router_dict['routertype']}}"/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-4"><label>
+                                        macaddress
+                                    </label></div>
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <input class="form-control" id = "macaddress" placeholder="Enter macaddress" name="macaddress" type="text" autocomplete="off" value="{{router_dict['macaddress']}}"/>
+                                        </div>
+                                    </div>
+                                  </div>
+<!-- Button trigger modal -->
+<button type="submit" class="btn btn-primary" style="margin-left: 200px;">
+    Update
+  </button>
+                                <br/>
+                                
+                                <p style="color: green;">{{ msg }}
+                                </p>
+                                <input type="hidden" id="hid_sapid" name="hid_sapid" value="{{router_dict['sapid']}}"/>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

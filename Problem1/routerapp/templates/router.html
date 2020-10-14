@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="login-panel panel panel-default" style="margin-top: 10px;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Existing Router Details:</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table id="router_table" class="table table-striped table-bordered nowrap" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>SapId</th>
+                                    <th>Loopback</th>
+                                    <th>Hostname</th>
+                                    <th>MacAddress</th>
+                                    <th>type</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for router in all_router_dict %}
+                                <tr>
+                                    <!-- <td>{{ loop.index }}</td> -->
+                                    <td>{{router['sapid']}}</td>
+                                    <td>{{router['loopback']}}</td>
+                                    <td>{{router['hostname']}}</td>
+                                    <td>{{router['macaddress']}}</td>
+                                    <td>{{router['routertype']}}</td>
+                                    <td><form role="form" method="POST" action="/delete/{{router['sapid']}}" id="delete_row"><button class="btn btn-danger btn-sm" type="submit">Delete</button></form></td>
+                                    <td><form role="form" method="POST" action="/update_router/{{router['sapid']}}" id="update_row"><button class="btn btn-primary btn-sm" type="submit">Update</button></form></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+            <form role="form" method="GET" action="/create" id="create_row">
+                <button class="btn btn-success btn-sm" type="submit">Create Router</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    {% endblock %}

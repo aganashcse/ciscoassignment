@@ -1,0 +1,26 @@
+summary: "Update router details"
+description: "This API will update a router details"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - in: "body"
+    name: "body"
+    description: "Accepts a input dictionary of router details with old ip"
+    required: true
+    schema:
+      type: "object"
+      properties:
+        LoopbackIP:
+          type: "string"
+          example: "10.10.10.10"
+        HostName:
+          type: "string"
+          example: "medusa"
+        type:
+          type: "string"
+          example: "AG1/CSS"
+responses:
+  405:
+    description: "Invalid input"

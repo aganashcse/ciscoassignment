@@ -1,0 +1,25 @@
+summary: "Router app"
+description: "This is a simple API which deals with router data"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - in: "header"
+    name: "apikey"
+    description: "api key for authentication"
+    required: true
+    schema:
+      type: "string"
+  - in: "query"
+    name: "startIp"
+    description: "start ip for range"
+    required: true
+    schema:
+      type: "string"
+  - in: "query"
+    name: "endIp"
+    description: "end ip for range"
+    required: true
+    schema:
+      type: "string"

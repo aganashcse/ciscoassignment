@@ -1,0 +1,25 @@
+summary: "Router app"
+description: "This is a simple API which deals with router data"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - in: "body"
+    name: "body"
+    description: "Accepts a input dictionary of inputs x1 and x2"
+    required: true
+    schema:
+      type: "object"
+      properties:
+        x1:
+          type: "integer"
+          format: "int64"
+          example: 45
+        x2:
+          type: "integer"
+          format: "int64"
+          example: 451
+responses:
+  405:
+    description: "Invalid input"
